@@ -78,11 +78,11 @@ Mini-веб-сервер на Flask.
 ```bash
 DOCKER_BUILDKIT=1 docker build -t flask-hello .
 ```
-![Скрин: запуск Docker](https://github.com/alphaserver777/docker_task/blob/main/screens/work_1.png)
+![Скрин: запуск Docker](https://github.com/alphaserver777/docker_task/blob/main/screens/work_2.png)
 
 ### Логи успешной сборки
 
-![Успешная работа](https://github.com/alphaserver777/docker_task/blob/main/screens/work_2.png)
+![Успешная работа](https://github.com/alphaserver777/docker_task/blob/main/screens/work_1.png)
 
 ---
 
