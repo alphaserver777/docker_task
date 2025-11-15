@@ -1,0 +1,38 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - APP_ENV=production
+    profiles:
+      - prod
+
+  web-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - APP_ENV=development
+    profiles:
+      - dev
+    develop:
+      watch:
+        # Следим за всеми исходниками и конфигами проекта
+        - action: sync+restart
+          path: .
+          target: /app
+          ignore:
+            - .git/
+            - __pycache__/
+            - venv/
+            - Dockerfile
+            - docker-compose.yml
+        # Если поменяли зависимости — пересобрать образ
+        - action: rebuild
+          path: requirements.txt
+

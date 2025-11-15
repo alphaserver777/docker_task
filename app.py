@@ -1,16 +1,18 @@
+import os
 from flask import Flask
 
 app = Flask(__name__)
 
+ENV = os.getenv("APP_ENV", "production")
+
 @app.route("/")
 def index():
-    return "Hello from Docker in Yandex Cloud!"
+    return f"Hello from Docker! ENV={ENV}"
 
 @app.route("/health")
 def health():
     return "OK"
 
 if __name__ == "__main__":
-    # Важно слушать на 0.0.0.0 и конкретном порту, чтобы Docker мог пробросить порт
-    app.run(host="0.0.0.0", port=8000)
-
+    debug = ENV == "development"
+    app.run(host="0.0.0.0", port=8000, debug=debug)
