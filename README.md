@@ -78,11 +78,10 @@ Mini-веб-сервер на Flask.
 ```bash
 DOCKER_BUILDKIT=1 docker build -t flask-hello .
 ```
-![Скрин: запуск Docker](https://github.com/alphaserver777/docker_task/blob/main/screens/work_2.png)
 
 ### Логи успешной сборки
 
-![Успешная работа](https://github.com/alphaserver777/docker_task/blob/main/screens/work_1.png)
+![Успешная работа](https://github.com/alphaserver777/docker_task/blob/main/screens/work_3.png)
 
 ---
 
@@ -108,6 +107,8 @@ docker run -p 8000:8000 flask-hello
 
 # 📌 **6. Docker Compose (dev/prod + watch)**
 
+![Скрин: запуск Docker](https://github.com/alphaserver777/docker_task/blob/main/screens/work_2.png)
+
 Этот раздел полностью закрывает **критерий 2**:
 
 * приложение запускается через Docker Compose;
@@ -125,6 +126,9 @@ sudo docker compose --profile prod up --build -d
 ```bash
 sudo docker compose --profile dev up --build --watch
 ```
+![Скрин: работа контейнера](https://github.com/alphaserver777/docker_task/blob/main/screens/work_3.png)
+
+![Скрин:успешная работа контейнера](https://github.com/alphaserver777/docker_task/blob/main/screens/work_4.png)
 
 Compose отслеживает изменения файлов в проекте и автоматически перезапускает сервис.
 
